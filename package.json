@@ -1,0 +1,21 @@
+{
+  "name": "playwright-from-scratch",
+  "version": "1.0.0",
+  "description": "this is playwright automation with JavaScript  from scratch",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ataur214/playwright-from-scratch.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ataur214/playwright-from-scratch/issues"
+  },
+  "homepage": "https://github.com/Ataur214/playwright-from-scratch#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.37.1"
+  }
+}
