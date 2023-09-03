@@ -1,8 +1,19 @@
-{
-    "userEmail":"noiceataure@gmail.com",
-    "userPassword":"@Ata1234",
-    "productName":"adidas original",
-    "Cvv":"123",
-    "cardName":"test",
-    "CountryName":"ind"
-}
+[
+    {
+        "userEmail":"noiceataure@gmail.com",
+        "userPassword":"@Ata1234",
+        "productName":"adidas original",
+        "Cvv":"123",
+        "cardName":"test",
+        "CountryName":"ind"
+    },
+    {
+        "userEmail":"noiceataure@gmail.com",
+        "userPassword":"@Ata1234",
+        "productName":"zara coat 3",
+        "Cvv":"123",
+        "cardName":"test",
+        "CountryName":"ind"
+    }
+
+]

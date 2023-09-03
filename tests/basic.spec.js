@@ -1,11 +1,47 @@
 const {test, expect} = require('@playwright/test');
 
-test('open the browser', async ({browser})=>{
-    const context = await browser.newContext();
-    const page = await context.newPage();
-    await page.goto('https://rahulshettyacademy.com/locatorspractice/');
-    console.log(await page.title());
-});
+test.describe.only('Two complete flow', ()=>{
+
+    test('open the browser', async ({browser})=>{
+        const context = await browser.newContext();
+        const page = await context.newPage();
+        await page.goto('https://rahulshettyacademy.com/locatorspractice/');
+        console.log(await page.title());
+    });
+
+    test('User registration form',async ({page})=>{
+        await page.goto('https://rahulshettyacademy.com/client');
+        await expect(page).toHaveTitle("Let's Shop");
+    
+        const firstName = page.locator('#firstName');
+        const lastName = page.locator('#lastName');
+        const gmail = page.locator("#userEmail");
+        const mobile = page.locator('#userMobile');
+        const dropdown = page.locator('[formcontrolname=occupation]');
+        const reg = page.getByText('Register here');
+        const Gender = page.getByLabel('Male', { exact: true });
+        const pass = page.getByPlaceholder('Passsword', { exact: true });
+        const confirmPass = page.getByPlaceholder('Confirm Passsword');
+        const chceckBox = page.getByRole('checkbox');
+        const regButton  = page.getByRole('button', { name: 'Register' });
+    
+        await reg.click();
+        await firstName.type('Ataure');
+        await lastName.type('Rahaman');
+        await gmail.type('noiceataure@gmail.com');
+        await mobile.type('1799797447');
+        await dropdown.selectOption('3: Engineer');
+        await Gender.click();
+        await pass.type('@Ata1234');
+        await confirmPass.type('@Ata1234');
+        await chceckBox.click();
+        await regButton.click();
+    
+        //await page.pause();
+    
+    })
+
+})
 
 test('without context open the browser', async ({browser})=>{
     const context = await browser.newContext();
@@ -48,37 +84,7 @@ test('without context open the browser', async ({browser})=>{
     
 });
 
-test('User registration form',async ({page})=>{
-    await page.goto('https://rahulshettyacademy.com/client');
-    await expect(page).toHaveTitle("Let's Shop");
 
-    const firstName = page.locator('#firstName');
-    const lastName = page.locator('#lastName');
-    const gmail = page.locator("#userEmail");
-    const mobile = page.locator('#userMobile');
-    const dropdown = page.locator('[formcontrolname=occupation]');
-    const reg = page.getByText('Register here');
-    const Gender = page.getByLabel('Male', { exact: true });
-    const pass = page.getByPlaceholder('Passsword', { exact: true });
-    const confirmPass = page.getByPlaceholder('Confirm Passsword');
-    const chceckBox = page.getByRole('checkbox');
-    const regButton  = page.getByRole('button', { name: 'Register' });
-
-    await reg.click();
-    await firstName.type('Ataure');
-    await lastName.type('Rahaman');
-    await gmail.type('noiceataure@gmail.com');
-    await mobile.type('1799797447');
-    await dropdown.selectOption('3: Engineer');
-    await Gender.click();
-    await pass.type('@Ata1234');
-    await confirmPass.type('@Ata1234');
-    await chceckBox.click();
-    await regButton.click();
-
-    await page.pause();
-
-})
 
 test('window handle', async ({browser})=>{
     const context = await browser.newContext();
