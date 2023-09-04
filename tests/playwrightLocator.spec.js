@@ -1,6 +1,6 @@
 const {test} = require('@playwright/test');
 
-test.only('Cypress inbuild locator strategic', async({page})=>{
+test('@web Cypress inbuild locator strategic', async({page})=>{
     await page.goto('https://rahulshettyacademy.com/angularpractice/');
     await page.locator('form input[name="name"]').type('Ataure');
     await page.locator('input[name="email"]').type('ataure@gmail.com');
@@ -13,7 +13,5 @@ test.only('Cypress inbuild locator strategic', async({page})=>{
     await page.getByRole('button',{name:'Submit'}).click();
     await page.getByRole('link',{name:'Shop'}).click();
     await page.locator('app-card').filter({hasText:'Nokia Edge'}).getByRole('button').click();
-
-    await page.pause();
 
 });

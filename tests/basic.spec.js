@@ -1,6 +1,6 @@
 const {test, expect} = require('@playwright/test');
 
-test.describe.only('Two complete flow', ()=>{
+test.describe('Two complete flow', ()=>{
 
     test('open the browser', async ({browser})=>{
         const context = await browser.newContext();

@@ -27,6 +27,5 @@ test('Browser back/forward action', async ({page})=>{
     //await elementHandle.scrollIntoViewIfNeeded();
     //await frame.getByRole('link',{name: 'Blog'}).scrollIntoViewIfNeeded();
     await frame.getByRole('link',{name: 'Blog'}).click();
-    await page.pause();
 
 })

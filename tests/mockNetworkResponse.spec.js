@@ -3,7 +3,7 @@ const {test,expect, request} = require('@playwright/test');
 const fakePayLoadOrders = { data: [], message: "No Orders" };
 
 
-test( 'Mocking the order response',async ({browser})=>{
+test( '@web Mocking the order response',async ({browser})=>{
     const context  = await browser.newContext();
     const page = await context.newPage();
     

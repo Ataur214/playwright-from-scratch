@@ -3,7 +3,12 @@
   "version": "1.0.0",
   "description": "this is playwright automation with JavaScript  from scratch",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "RegressionTest_Chrome":"npx playwright test --project=chromium --grep @regression",
+    "SmokeTest_FireFox":"npx playwright test --project=firefox --grep @web",
+    "AllureReport":"allure generate my-allure-results -o allure-report --clean && allure open allure-report",
+    "HtmlReport":"npx playwright show-report"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Ataur214/playwright-from-scratch.git"
@@ -16,6 +21,7 @@
   },
   "homepage": "https://github.com/Ataur214/playwright-from-scratch#readme",
   "devDependencies": {
-    "@playwright/test": "^1.37.1"
+    "@playwright/test": "^1.37.1",
+    "allure-playwright": "^2.6.0"
   }
 }

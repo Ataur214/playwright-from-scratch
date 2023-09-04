@@ -25,10 +25,11 @@ test.beforeAll( async ({browser})=>{
 
 })
 
-test('add product to my card', async ()=>{
+test('@regression add product to my card', async ()=>{
     const page = await ContextWithCookies.newPage();
     await page.goto('https://rahulshettyacademy.com/client');
     const products = page.locator('.card-body');
+    const myCard = page.locator('[routerlink="/dashboard/cart"]');
     const productName = 'adidas original';
     await products.first().waitFor();
     //Add the product to my card dynamically
